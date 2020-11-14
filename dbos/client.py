@@ -18,7 +18,7 @@ class Client:
         else: return objects.UserProfile(json.loads(response.text)["user"])
 
     def get_user_level(self, userId: int, serverId: int):
-        response = requests.get(f"{self.api}/s/{serverId}/u/{userId}")
+        response = requests.get(f"{self.api}/s/{serverId}/u/{userId}/level")
         if response.status_code != 200: raise exceptions.CheckException(json.loads(response.text))
         else: return objects.Level(json.loads(response.text)["user"])
 
