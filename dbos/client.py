@@ -7,6 +7,7 @@ from .lib.util import objects, exceptions
 class Client:
     def __init__(self):
         self.api = "https://dbos.glitch.me/api"
+        self.version = json.loads(requests.get(f"{self.api}/b/version").text)["Version"]
 
     def get_user_info(self, userId: int, serverId: int = None):
         if serverId is not None: target = f"s/{serverId}"
