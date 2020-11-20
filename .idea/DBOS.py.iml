@@ -2,7 +2,12 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/dbos/lib/util/__pycache__" />
+      <excludeFolder url="file://$MODULE_DIR$/dbos/lib/__pycache__" />
+      <excludeFolder url="file://$MODULE_DIR$/dbos/__pycache__" />
+      <excludeFolder url="file://$MODULE_DIR$/test" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

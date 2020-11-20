@@ -5,7 +5,7 @@ with open("README.md", "r") as stream:
 
 setup(
     name = 'DBOS.py',
-    version = '0.0.8',
+    version = '0.1.1',
     url = 'https://github.com/wezacon/dbos.py',
     download_url = 'https://github.com/wezacon/dbos.py/tarball/master',
     license = 'MIT',

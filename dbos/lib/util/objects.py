@@ -25,6 +25,8 @@ class UserProfile:
         except (KeyError, TypeError): self.isModerator: bool = False
         try: self.isPartner: bool = data["partner"]
         except (KeyError, TypeError): self.isPartner: bool = False
+        try: self.isBugBuster: bool = data["bugBuster"]
+        except (KeyError, TypeError): self.isBugBuster: bool = False
         try: self.isRemoved: bool = data["removed"]
         except (KeyError, TypeError): self.isRemoved: bool = False
         try: self.isVerified: bool = data["verified"]
@@ -37,6 +39,8 @@ class UserProfile:
         except (KeyError, TypeError): self.isSiteModerator: bool = False
         try: self.isSitePartner: bool = data["sitePartner"]
         except (KeyError, TypeError): self.isSitePartner: bool = False
+        try: self.isSiteBugBuster: bool = data["siteBugBuster"]
+        except (KeyError, TypeError): self.isSiteBugBuster: bool = False
 
         try: self.discordServer: int = data["discordServer"]
         except (KeyError, TypeError): self.discordServer: int = -1
@@ -56,6 +60,7 @@ class UserProfile:
         if self.isSuperAdmin: self.badges.append("Super Admin")
         if self.isVerified: self.badges.append("Verified")
         if self.isPartner: self.badges.append("Partner")
+        if self.isBugBuster: self.badges.append("Bug Buster")
 
 
 class UserProfileList:
@@ -81,6 +86,8 @@ class Level:
         except (KeyError, TypeError): self.isSiteModerator: bool = False
         try: self.isSitePartner: bool = data["sitePartner"]
         except (KeyError, TypeError): self.isSitePartner: bool = False
+        try: self.isSiteBugBuster: bool = data["siteBugBuster"]
+        except (KeyError, TypeError): self.isSiteBugBuster: bool = False
 
         try: self.xp: int = data["xp"]
         except (KeyError, TypeError): self.xp: int = -1

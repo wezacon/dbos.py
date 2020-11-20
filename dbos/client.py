@@ -9,6 +9,11 @@ class Client:
         self.api = "https://dbos.glitch.me/api"
         self.version = json.loads(requests.get(f"{self.api}/b/version").text)["version"]
 
+    def get_bot_info(self):
+        response = requests.get(f"{self.api}/bot")
+        if response.status_code != 200: raise exceptions.CheckException(json.loads(response.text))
+        else: return objects.Bot(json.loads(response.text))
+
     def get_user_info(self, userId: int, serverId: int = None):
         if serverId is not None: target = f"s/{serverId}"
         else: target = "global"
@@ -26,11 +31,6 @@ class Client:
         response = requests.get(f"{self.api}/global/s/{guildId}")
         if response.status_code != 200: raise exceptions.CheckException(json.loads(response.text))
         else: return objects.Server(json.loads(response.text)["guild"])
-
-    def get_bot_info(self):
-        response = requests.get(f"{self.api}/bot")
-        if response.status_code != 200: raise exceptions.CheckException(json.loads(response.text))
-        else: return objects.Bot(json.loads(response.text))
 
     def get_all_users(self, serverId: int = None):
         if serverId is not None: target = f"u/s/{serverId}/all"
