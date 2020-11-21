@@ -12,6 +12,10 @@ class UserProfile:
         except (KeyError, TypeError): self.removeReason: str = "Undefined"
         try: self.username: str = data["username"]
         except (KeyError, TypeError): self.username: str = "Undefined"
+        try: self.discordServer: str = data["discordServer"]
+        except (KeyError, TypeError): self.discordServer: str = "Undefined"
+        try: self.github: str = data["github"]
+        except (KeyError, TypeError): self.github: str = "Undefined"
 
         try: self.allowListing: bool = data["allowListing"]
         except (KeyError, TypeError): self.allowListing: bool = False
@@ -42,10 +46,6 @@ class UserProfile:
         try: self.isSiteBugBuster: bool = data["siteBugBuster"]
         except (KeyError, TypeError): self.isSiteBugBuster: bool = False
 
-        try: self.discordServer: int = data["discordServer"]
-        except (KeyError, TypeError): self.discordServer: int = -1
-        try: self.github: int = data["github"]
-        except (KeyError, TypeError): self.github: int = -1
         try: self.userId: int = data["id"]
         except (KeyError, TypeError): self.userId: int = -1
         try: self.messages: int = data["messages"]
